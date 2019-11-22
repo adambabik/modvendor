@@ -86,7 +86,7 @@ func main() {
 
 				// Handle replaces with a relative target. For example:
 				// "replace github.com/status-im/status-go/protocol => ./protocol"
-				if strings.HasPrefix(s[4], ".") {
+				if strings.HasPrefix(s[4], ".") || strings.HasPrefix(s[4], "/") {
 					mod.Dir, err = filepath.Abs(s[4])
 					if err != nil {
 						fmt.Printf("invalid relative path: %v", err)
